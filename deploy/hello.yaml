@@ -73,33 +73,17 @@ kind: Ingress
 metadata:
   name: hello-world-ingress
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
-  - host: www.davonet.com
+  - host: one.davonet.com
   - http:
       paths:
-      - path: /one(/|$)(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: helloworld-one
             port:
               number: 80
-      - path: /two(/|$)(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: helloworld-two
-            port:
-              number: 80
-      - path: /(.*)
-        pathType: Prefix
-        backend:
-          service:
-            name: helloworld-one
-            port:
-              number: 80
+ 
