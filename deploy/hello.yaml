@@ -80,7 +80,7 @@ spec:
   ingressClassName: nginx
   rules:
   - host: www.davonet.com
-     http:
+  - http:
       paths:
       - path: /one(/|$)(.*)
         pathType: Prefix
