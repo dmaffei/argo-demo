@@ -79,7 +79,8 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - http:
+  - host: www.davonet.com
+     http:
       paths:
       - path: /one(/|$)(.*)
         pathType: Prefix
